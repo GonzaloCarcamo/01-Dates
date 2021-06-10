@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import shortid from 'shortid';
 
 const Formulario = () => {
         // Crear state de citas
@@ -30,13 +31,18 @@ const Formulario = () => {
                 // Validar
                 if( mascota.trim() === '' || propietario.trim() === '' || fecha.trim() === '' ||
                 hora.trim() === '' || sintomas.trim() === '' ){
-                        actualizarError(true)
+                        actualizarError(true);
                         return;
                 }
+
+                // Eliminar mensaje previo
+                actualizarError(false);
+
                 // Asignar un ID
+                cita.id = shortid.generate();
 
                 // Crear Cita
-
+                console.log(cita);
                 // Reiniciar Form
         }
 
