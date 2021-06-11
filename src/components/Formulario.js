@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import shortid from 'shortid';
 
-const Formulario = () => {
+const Formulario = ({crearCita}) => {
         // Crear state de citas
         const [cita, actualizarCita] = useState({
                 mascota: '',
@@ -42,7 +42,8 @@ const Formulario = () => {
                 cita.id = shortid.generate();
 
                 // Crear Cita
-                console.log(cita);
+                crearCita(cita);
+                
                 // Reiniciar Form
         }
 
