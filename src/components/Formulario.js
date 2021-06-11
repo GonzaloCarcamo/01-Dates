@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import shortid from 'shortid';
+import PropTypes from 'prop-types';
 
 const Formulario = ({crearCita}) => {
         // Crear state de citas
@@ -117,6 +118,10 @@ const Formulario = ({crearCita}) => {
                         </form>
                 </Fragment>
          );
+}
+
+Formulario.propTypes = {
+        crearCita: PropTypes.func.isRequired
 }
  
 export default Formulario;
